@@ -78,19 +78,20 @@ export default function Header() {
 
       {/* Right */}
       <motion.div style={{ color: textColor }} className="flex-1 flex justify-end items-center gap-6 text-sm tracking-wide">
-        <div className="hidden md:flex gap-3 text-xs uppercase cursor-pointer relative group">
-          <span 
-            className={`transition-opacity ${lang === 'en' ? 'opacity-100 font-medium' : 'opacity-40 hover:opacity-100'}`}
+        <div className={`hidden md:flex border transition-all duration-500 overflow-hidden ${isScrolled ? 'border-brand-charcoal/20' : 'border-white/30'}`}>
+          <button 
+            className={`px-3 py-1.5 text-[0.6rem] tracking-widest transition-all duration-300 ${lang === 'en' ? (isScrolled ? 'bg-brand-charcoal text-white' : 'bg-white text-brand-charcoal') : (isScrolled ? 'text-brand-charcoal hover:bg-brand-charcoal/5' : 'text-white hover:bg-white/10')}`}
             onClick={() => setLang('en')}
           >
             EN
-          </span>
-          <span 
-            className={`transition-opacity ${lang === 'fr' ? 'opacity-100 font-medium' : 'opacity-40 hover:opacity-100'}`}
+          </button>
+          <div className={`w-[1px] ${isScrolled ? 'bg-brand-charcoal/20' : 'bg-white/30'}`} />
+          <button 
+            className={`px-3 py-1.5 text-[0.6rem] tracking-widest transition-all duration-300 ${lang === 'fr' ? (isScrolled ? 'bg-brand-charcoal text-white' : 'bg-white text-brand-charcoal') : (isScrolled ? 'text-brand-charcoal hover:bg-brand-charcoal/5' : 'text-white hover:bg-white/10')}`}
             onClick={() => setLang('fr')}
           >
             FR
-          </span>
+          </button>
         </div>
         <button
           className={`border px-6 py-2 rounded-none uppercase text-xs tracking-widest transition-all duration-500 ease-out ${
