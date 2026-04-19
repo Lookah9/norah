@@ -4,38 +4,23 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../Button";
 import { X, ChevronRight, ChevronLeft } from "lucide-react";
-import { ASSET_PREFIX } from "@/lib/utils";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { GalleryModal } from "../GalleryModal";
 
 const heroGallery = [
-  `${ASSET_PREFIX}/Aerials of the villa and the pool/DJI_0461.JPG`,
-  `${ASSET_PREFIX}/Interior and garden and pool/Villa -10.jpg`,
-  `${ASSET_PREFIX}/Interior and garden and pool/Villa -6.jpg`,
-  `${ASSET_PREFIX}/Interior and garden and pool/Villa -30.jpg`,
-  `${ASSET_PREFIX}/Interior and garden and pool/Villa -12.jpg`
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0462.JPG`,
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0463.JPG`,
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0465.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -61.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -62.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -63.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -64.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -65.jpg`,
 ];
 
 export default function HeroSection() {
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
   const [direction, setDirection] = useState(0);
   const { lang } = useLanguage();
-
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? "20vw" : "-20vw",
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (dir: number) => ({
-      zIndex: 0,
-      x: dir < 0 ? "20vw" : "-20vw",
-      opacity: 0
-    })
-  };
 
   const nextImage = () => {
     if (galleryIndex !== null) {
@@ -93,56 +78,17 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Fullscreen Gallery Overlay */}
-      <AnimatePresence custom={direction}>
-        {galleryIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[100] bg-brand-charcoal/50 backdrop-blur-md flex items-center justify-center overflow-hidden"
-          >
-            <button 
-              onClick={() => setGalleryIndex(null)}
-              className="absolute top-8 right-8 z-50 text-white border border-white/50 px-6 py-2 rounded-none hover:bg-white/10 uppercase text-[0.65rem] tracking-[0.2em] transition-colors flex items-center gap-2"
-            >
-              CLOSE
-            </button>
-            
-            <button 
-              onClick={prevImage}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white z-50 opacity-50 hover:opacity-100 transition-opacity"
-            >
-              <ChevronLeft size={48} strokeWidth={1} />
-            </button>
-            <button 
-              onClick={nextImage}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white z-50 opacity-50 hover:opacity-100 transition-opacity"
-            >
-              <ChevronRight size={48} strokeWidth={1} />
-            </button>
-
-            <AnimatePresence custom={direction}>
-              <motion.img
-                key={galleryIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                src={heroGallery[galleryIndex]}
-                alt={`Gallery image ${galleryIndex + 1}`}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full object-contain absolute inset-0 max-w-[90vw] max-h-[85vh] m-auto"
-              />
-            </AnimatePresence>
-            
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 text-[0.65rem] tracking-[0.2em] uppercase">
-              {galleryIndex + 1} / {heroGallery.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <GalleryModal
+        images={heroGallery}
+        activeIndex={galleryIndex}
+        onClose={() => setGalleryIndex(null)}
+        onNext={nextImage}
+        onPrev={prevImage}
+        direction={direction}
+      />
+    </section>
+  );
+}
 
     </section>
   );

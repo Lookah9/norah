@@ -9,12 +9,23 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ASSET_PREFIX } from "@/lib/utils";
 
 const roomImages = [
-  `${ASSET_PREFIX}/Rooms/20210823_163213.jpg`,
-  `${ASSET_PREFIX}/Rooms/20210823_163235.jpg`,
-  `${ASSET_PREFIX}/Rooms/20210823_163513.jpg`,
-  `${ASSET_PREFIX}/Rooms/20210823_163626.jpg`,
-  `${ASSET_PREFIX}/Rooms/20210823_163716.jpg`,
-  `${ASSET_PREFIX}/Rooms/20210823_163847.jpg`
+  `${ASSET_PREFIX}/VN Rooms/20210823_163235.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_163716.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_163921.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_164159.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_164247.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_164721.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_165531.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/20210823_165753.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -102.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -103.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -109.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -116.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -118.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -54.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -60.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -62.jpg`,
+  `${ASSET_PREFIX}/VN Rooms/Villa -68.jpg`,
 ];
 
 export default function CapacitySection() {

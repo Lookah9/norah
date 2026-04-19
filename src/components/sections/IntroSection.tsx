@@ -1,11 +1,34 @@
-"use client";
+import { GalleryModal } from "../GalleryModal";
 
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { SectionHeading, TextPairing } from "../Typography";
-import { Button } from "../Button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { ASSET_PREFIX } from "@/lib/utils";
+const detailsGallery = [
+  `${ASSET_PREFIX}/VN Explore Details/Villa -105.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -107.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -129.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -13.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -14.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -17.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -23.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -30.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -38.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -40.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -43.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -45.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -48.jpg`,
+];
+
+const viewsGallery = [
+  `${ASSET_PREFIX}/VN Explore Views/Villa -123.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -124.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -125.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -126.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -132.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -133.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -61.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -62.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -63.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -64.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -65.jpg`,
+];
 
 function EditorialScrollySection({ 
   label, 
@@ -145,6 +168,12 @@ function EditorialScrollySection({
 
 export default function IntroSection() {
   const { lang } = useLanguage();
+  
+  const [detailsIndex, setDetailsIndex] = useState<number | null>(null);
+  const [detailsDir, setDetailsDir] = useState(0);
+
+  const [viewsIndex, setViewsIndex] = useState<number | null>(null);
+  const [viewsDir, setViewsDir] = useState(0);
 
   return (
     <div className="flex flex-col">
@@ -160,7 +189,10 @@ export default function IntroSection() {
                 : "Inside, the villa preserves the composure and richness of a historic residence. Decorative detail, rare materials and a strong architectural identity give each space its own presence while maintaining a coherent sense of refinement throughout the house."}
             </p>
             <div className="pt-8">
-              <Button variant="outline" onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="outline" onClick={() => {
+                setDetailsDir(0);
+                setDetailsIndex(0);
+              }}>
                 {lang === 'fr' ? "Plus de détails" : "Explore Details"}
               </Button>
             </div>
@@ -185,7 +217,10 @@ export default function IntroSection() {
                 : "Surrounded by botanical gardens, terraces and open views, Villa Norah unfolds with a calm and generous sense of space. The estate moves naturally between shaded greenery, sunlit stone and quieter poolside moments, creating an atmosphere that feels both private and expansive."}
             </p>
             <div className="pt-8">
-              <Button variant="outline" onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="outline" onClick={() => {
+                setViewsDir(0);
+                setViewsIndex(0);
+              }}>
                 {lang === 'fr' ? "Voir la galerie" : "View Gallery"}
               </Button>
             </div>
@@ -196,6 +231,37 @@ export default function IntroSection() {
           `${ASSET_PREFIX}/Interior and garden and pool/Villa-134.jpg`
         ]}
         imagePosition="left"
+      />
+
+      {/* Modals */}
+      <GalleryModal
+        images={detailsGallery}
+        activeIndex={detailsIndex}
+        onClose={() => setDetailsIndex(null)}
+        onNext={() => {
+          setDetailsDir(1);
+          setDetailsIndex((detailsIndex! + 1) % detailsGallery.length);
+        }}
+        onPrev={() => {
+          setDetailsDir(-1);
+          setDetailsIndex((detailsIndex! - 1 + detailsGallery.length) % detailsGallery.length);
+        }}
+        direction={detailsDir}
+      />
+
+      <GalleryModal
+        images={viewsGallery}
+        activeIndex={viewsIndex}
+        onClose={() => setViewsIndex(null)}
+        onNext={() => {
+          setViewsDir(1);
+          setViewsIndex((viewsIndex! + 1) % viewsGallery.length);
+        }}
+        onPrev={() => {
+          setViewsDir(-1);
+          setViewsIndex((viewsIndex! - 1 + viewsGallery.length) % viewsGallery.length);
+        }}
+        direction={viewsDir}
       />
     </div>
   );
