@@ -44,7 +44,7 @@ export default function HeroSection() {
       <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('${ASSET_PREFIX}/Hero.JPG')`,
+          backgroundImage: `url('${ASSET_PREFIX}/Hero_converted.webp')`,
         }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
