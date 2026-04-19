@@ -9,7 +9,7 @@ export default function LocationSection() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-32 md:py-48 px-8 max-w-[100rem] mx-auto border-t border-brand-charcoal/10">
+    <section className="py-20 md:py-48 px-8 max-w-[100rem] mx-auto border-t border-brand-charcoal/10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center pl-0 lg:pl-12">
         
         {/* Text Col */}

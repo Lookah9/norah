@@ -46,7 +46,7 @@ export default function CapacitySection() {
   };
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-8 max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center">
+    <section className="py-16 md:py-32 px-4 md:px-8 max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center">
       
       <motion.div
          initial={{ opacity: 0, y: 30 }}

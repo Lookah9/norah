@@ -112,7 +112,7 @@ function EditorialScrollySection({
 
   return (
     <section ref={containerRef} className="relative min-h-screen md:h-[150vh]">
-      <div className="md:sticky md:top-0 md:h-screen flex flex-col justify-center px-8 py-32 md:py-0 max-w-[100rem] mx-auto w-full">
+      <div className="md:sticky md:top-0 md:h-screen flex flex-col justify-center px-8 py-16 md:py-0 max-w-[100rem] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center w-full">
           
           {/* Text Col */}

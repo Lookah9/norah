@@ -10,7 +10,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function InquirySection() {
   const { lang } = useLanguage();
   return (
-    <section id="inquiry" className="py-32 md:py-48 px-4 sm:px-8 bg-brand-stone/50">
+    <section id="inquiry" className="py-20 md:py-48 px-4 sm:px-8 bg-brand-stone/50">
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-24"

@@ -42,11 +42,11 @@ export default function HeroSection() {
     <section className="relative h-screen w-full flex flex-col justify-end items-center overflow-hidden pb-20 md:pb-32">
       {/* Background Image */}
       <motion.div
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-[center_35%] md:bg-center"
         style={{
           backgroundImage: `url('${ASSET_PREFIX}/Hero_converted.webp')`,
         }}
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
       >
