@@ -1,3 +1,11 @@
+"use client";
+
+import { useRef, useState } from "react";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { SectionHeading, TextPairing } from "../Typography";
+import { Button } from "../Button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { ASSET_PREFIX } from "@/lib/utils";
 import { GalleryModal } from "../GalleryModal";
 
 const detailsGallery = [

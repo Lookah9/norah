@@ -92,18 +92,20 @@ export function GalleryModal({
 
           {/* Image Display */}
           <AnimatePresence custom={direction} mode="popLayout">
-            <motion.img
-              key={activeIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              src={images[activeIndex]}
-              alt={`Gallery image ${activeIndex + 1}`}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full h-full object-contain absolute inset-0 max-w-[90vw] max-h-[85vh] m-auto pointer-events-none"
-            />
+            {activeIndex !== null && (
+              <motion.img
+                key={activeIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                src={encodeURI(images[activeIndex])}
+                alt={`Gallery image ${activeIndex + 1}`}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-full object-contain absolute inset-0 max-w-[90vw] max-h-[85vh] m-auto pointer-events-none"
+              />
+            )}
           </AnimatePresence>
           
           {/* Index Indicator */}
