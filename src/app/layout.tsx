@@ -31,7 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
       other: [
         { rel: 'manifest', url: `${basePath}/site.webmanifest` },
-        { rel: 'preload', url: `${basePath}/Hero_converted.webp`, as: 'image', fetchpriority: 'high' },
+        { rel: 'preload', url: `${basePath}/Hero_converted.webp`, as: 'image', fetchpriority: 'high', media: '(min-width: 769px)' },
+        { rel: 'preload', url: `${basePath}/Hero_mobile_converted.webp`, as: 'image', fetchpriority: 'high', media: '(max-width: 768px)' },
         { rel: 'preload', url: `${basePath}/Logos/Logo_white_optimized.png`, as: 'image' },
       ],
     },
