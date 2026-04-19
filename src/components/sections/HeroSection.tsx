@@ -9,14 +9,14 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { GalleryModal } from "../GalleryModal";
 
 const heroGallery = [
-  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0462.JPG`,
-  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0463.JPG`,
-  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0465.jpg`,
-  `${ASSET_PREFIX}/VN Hero Gallery/Villa -61.jpg`,
-  `${ASSET_PREFIX}/VN Hero Gallery/Villa -62.jpg`,
-  `${ASSET_PREFIX}/VN Hero Gallery/Villa -63.jpg`,
-  `${ASSET_PREFIX}/VN Hero Gallery/Villa -64.jpg`,
-  `${ASSET_PREFIX}/VN Hero Gallery/Villa -65.jpg`,
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0462_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0463_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/DJI_0465_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -61_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -62_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -63_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -64_converted.webp`,
+  `${ASSET_PREFIX}/VN Hero Gallery/Villa -65_converted.webp`,
 ];
 
 export default function HeroSection() {

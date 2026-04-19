@@ -9,33 +9,33 @@ import { ASSET_PREFIX } from "@/lib/utils";
 import { GalleryModal } from "../GalleryModal";
 
 const detailsGallery = [
-  `${ASSET_PREFIX}/VN Explore Details/Villa -105.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -107.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -129.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -13.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -14.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -17.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -23.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -30.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -38.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -40.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -43.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -45.jpg`,
-  `${ASSET_PREFIX}/VN Explore Details/Villa -48.jpg`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -105_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -107_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -129_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -13_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -14_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -17_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -23_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -30_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -38_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -40_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -43_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -45_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Details/Villa -48_converted.webp`,
 ];
 
 const viewsGallery = [
-  `${ASSET_PREFIX}/VN Explore Views/Villa -123.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -124.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -125.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -126.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -132.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -133.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -61.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -62.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -63.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -64.jpg`,
-  `${ASSET_PREFIX}/VN Explore Views/Villa -65.jpg`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -123_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -124_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -125_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -126_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -132_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -133_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -61_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -62_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -63_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -64_converted.webp`,
+  `${ASSET_PREFIX}/VN Explore Views/Villa -65_converted.webp`,
 ];
 
 function EditorialScrollySection({ 
@@ -207,8 +207,8 @@ export default function IntroSection() {
           </div>
         }
         images={[
-          `${ASSET_PREFIX}/Interior and garden and pool/Villa -10.jpg`,
-          `${ASSET_PREFIX}/Interior and garden and pool/Villa -34.jpg`
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa -10_converted.webp`,
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa -34_converted.webp`
         ]}
         imagePosition="right"
       />
@@ -235,8 +235,8 @@ export default function IntroSection() {
           </div>
         }
         images={[
-          `${ASSET_PREFIX}/Interior and garden and pool/Villa-130.jpg`,
-          `${ASSET_PREFIX}/Interior and garden and pool/Villa-134.jpg`
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa-130_converted.webp`,
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa-134_converted.webp`
         ]}
         imagePosition="left"
       />
