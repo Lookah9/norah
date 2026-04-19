@@ -6,14 +6,15 @@ import { Button } from "../Button";
 import { RoomDetailsModal } from "./RoomDetailsModal";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ASSET_PREFIX } from "@/lib/utils";
 
 const roomImages = [
-  "/Rooms/20210823_163213.jpg",
-  "/Rooms/20210823_163235.jpg",
-  "/Rooms/20210823_163513.jpg",
-  "/Rooms/20210823_163626.jpg",
-  "/Rooms/20210823_163716.jpg",
-  "/Rooms/20210823_163847.jpg"
+  `${ASSET_PREFIX}/Rooms/20210823_163213.jpg`,
+  `${ASSET_PREFIX}/Rooms/20210823_163235.jpg`,
+  `${ASSET_PREFIX}/Rooms/20210823_163513.jpg`,
+  `${ASSET_PREFIX}/Rooms/20210823_163626.jpg`,
+  `${ASSET_PREFIX}/Rooms/20210823_163716.jpg`,
+  `${ASSET_PREFIX}/Rooms/20210823_163847.jpg`
 ];
 
 export default function CapacitySection() {

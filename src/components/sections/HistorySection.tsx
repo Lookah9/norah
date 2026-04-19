@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ASSET_PREFIX } from "@/lib/utils";
 
 export default function HistorySection() {
   const { lang } = useLanguage();
@@ -13,7 +14,7 @@ export default function HistorySection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        src="/villanorah sketch.png" 
+        src={`${ASSET_PREFIX}/villanorah sketch.png`}
         alt="Villa Norah Sketch" 
         className="w-32 md:w-48 mb-12 opacity-80"
       />

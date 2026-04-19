@@ -4,14 +4,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../Button";
 import { X, ChevronRight, ChevronLeft } from "lucide-react";
+import { ASSET_PREFIX } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const heroGallery = [
-  "/Aerials of the villa and the pool/DJI_0461.JPG",
-  "/Interior and garden and pool/Villa -10.jpg",
-  "/Interior and garden and pool/Villa -6.jpg",
-  "/Interior and garden and pool/Villa -30.jpg",
-  "/Interior and garden and pool/Villa -12.jpg"
+  `${ASSET_PREFIX}/Aerials of the villa and the pool/DJI_0461.JPG`,
+  `${ASSET_PREFIX}/Interior and garden and pool/Villa -10.jpg`,
+  `${ASSET_PREFIX}/Interior and garden and pool/Villa -6.jpg`,
+  `${ASSET_PREFIX}/Interior and garden and pool/Villa -30.jpg`,
+  `${ASSET_PREFIX}/Interior and garden and pool/Villa -12.jpg`
 ];
 
 export default function HeroSection() {
@@ -56,7 +57,7 @@ export default function HeroSection() {
       <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/Hero.JPG')",
+          backgroundImage: `url('${ASSET_PREFIX}/Hero.JPG')`,
         }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

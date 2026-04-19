@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence }
 import { SectionHeading, TextPairing } from "../Typography";
 import { Button } from "../Button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ASSET_PREFIX } from "@/lib/utils";
 
 function EditorialScrollySection({ 
   label, 
@@ -166,8 +167,8 @@ export default function IntroSection() {
           </div>
         }
         images={[
-          "/Interior and garden and pool/Villa -10.jpg",
-          "/Interior and garden and pool/Villa -34.jpg"
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa -10.jpg`,
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa -34.jpg`
         ]}
         imagePosition="right"
       />
@@ -191,8 +192,8 @@ export default function IntroSection() {
           </div>
         }
         images={[
-          "/Interior and garden and pool/Villa-130.jpg",
-          "/Interior and garden and pool/Villa-134.jpg"
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa-130.jpg`,
+          `${ASSET_PREFIX}/Interior and garden and pool/Villa-134.jpg`
         ]}
         imagePosition="left"
       />
