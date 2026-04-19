@@ -106,6 +106,9 @@ export default function CapacitySection() {
                 src={src} 
                 alt={`Room detail ${idx + 1}`} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                loading="lazy"
+                width={400}
+                height={500}
               />
             </div>
           ))}

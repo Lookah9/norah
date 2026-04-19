@@ -60,6 +60,9 @@ export default function Header() {
           style={{ opacity: whiteLogoOpacity }}
           className="absolute h-full w-auto object-contain pointer-events-auto cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          width={300}
+          height={100}
+          loading="eager"
         />
         <motion.img 
           src={`${ASSET_PREFIX}/Logos/Logo_black_optimized.png`}
@@ -67,6 +70,9 @@ export default function Header() {
           style={{ opacity: blackLogoOpacity }}
           className="absolute h-full w-auto object-contain pointer-events-auto cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          width={300}
+          height={100}
+          loading="lazy"
         />
       </motion.div>
 

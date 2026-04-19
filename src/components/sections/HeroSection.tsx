@@ -53,6 +53,8 @@ export default function HeroSection() {
           fetchpriority="high"
           loading="eager"
           decoding="sync"
+          width={1920}
+          height={1080}
         />
         {/* Subtle dark gradient for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />

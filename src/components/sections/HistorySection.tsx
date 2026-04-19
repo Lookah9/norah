@@ -17,6 +17,9 @@ export default function HistorySection() {
         src={`${ASSET_PREFIX}/villanorah sketch.png`}
         alt="Villa Norah Sketch" 
         className="w-32 md:w-48 mb-12 opacity-80"
+        loading="lazy"
+        width={192}
+        height={132}
       />
       
       <motion.div

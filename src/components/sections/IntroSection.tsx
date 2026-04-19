@@ -146,6 +146,9 @@ function EditorialScrollySection({
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
+                loading="lazy"
+                width={800}
+                height={1000}
               />
             </AnimatePresence>
 
