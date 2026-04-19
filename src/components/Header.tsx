@@ -55,14 +55,14 @@ export default function Header() {
         className="flex-1 flex justify-center items-center relative pointer-events-none h-14"
       >
         <motion.img 
-          src={`${ASSET_PREFIX}/Logos/Logo Saint Georges white.png`}
+          src={`${ASSET_PREFIX}/Logos/Logo_white_optimized.png`}
           alt="Saint Georges White"
           style={{ opacity: whiteLogoOpacity }}
           className="absolute h-full w-auto object-contain pointer-events-auto cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
         <motion.img 
-          src={`${ASSET_PREFIX}/Logos/Logo Saint Georges black.png`}
+          src={`${ASSET_PREFIX}/Logos/Logo_black_optimized.png`}
           alt="Saint Georges Black"
           style={{ opacity: blackLogoOpacity }}
           className="absolute h-full w-auto object-contain pointer-events-auto cursor-pointer"

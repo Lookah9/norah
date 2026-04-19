@@ -40,19 +40,23 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full flex flex-col justify-end items-center overflow-hidden pb-20 md:pb-32">
-      {/* Background Image */}
-      <motion.div
-        className="absolute inset-0 z-0 bg-cover bg-[center_35%] md:bg-center"
-        style={{
-          backgroundImage: `url('${ASSET_PREFIX}/Hero_converted.webp')`,
-        }}
-        initial={{ scale: 1.05, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
-      >
+      {/* Background Image / Optimized for LCP */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.img
+          src={`${ASSET_PREFIX}/Hero_converted.webp`}
+          alt="Villa Norah Aerial View"
+          className="w-full h-full object-cover object-[center_35%] md:object-center"
+          initial={{ scale: 1.05, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
+          // @ts-ignore
+          fetchpriority="high"
+          loading="eager"
+          decoding="sync"
+        />
         {/* Subtle dark gradient for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-      </motion.div>
+      </div>
 
       {/* Content */}
       <motion.div 
