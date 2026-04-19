@@ -161,7 +161,7 @@ export default function IntroSection() {
             </p>
             <div className="pt-8">
               <Button variant="outline" onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}>
-                {lang === 'fr' ? "Découvrir les réceptions" : "Explore Events"}
+                {lang === 'fr' ? "Plus de détails" : "Explore Details"}
               </Button>
             </div>
           </div>
