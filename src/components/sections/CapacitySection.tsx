@@ -31,15 +31,22 @@ const roomImages = [
 export default function CapacitySection() {
   const { lang } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
+  const handleScroll = () => {
+    if (!hasInteracted) setHasInteracted(true);
+  };
+
   const scrollLeft = () => {
+    if (!hasInteracted) setHasInteracted(true);
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
+    if (!hasInteracted) setHasInteracted(true);
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
@@ -97,19 +104,25 @@ export default function CapacitySection() {
         
         <div 
           ref={carouselRef}
+          onScroll={handleScroll}
           className="flex overflow-x-auto gap-4 md:gap-6 snap-x snap-mandatory thin-scrollbar pb-6 px-4 md:px-0"
         >
           {roomImages.map((src, idx) => (
             <div key={idx} className="shrink-0 w-[280px] md:w-[400px] aspect-[4/5] snap-center overflow-hidden relative group">
               <div className="absolute inset-0 bg-brand-charcoal/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img 
-                src={src} 
-                alt={`Room detail ${idx + 1}`} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-                width={400}
-                height={500}
-              />
+              {(hasInteracted || idx < 3) ? (
+                <img 
+                  src={src} 
+                  alt={`Room detail ${idx + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  loading={idx < 3 ? "eager" : "lazy"}
+                  decoding="async"
+                  width={400}
+                  height={500}
+                />
+              ) : (
+                <div className="w-full h-full bg-brand-charcoal/5" />
+              )}
             </div>
           ))}
         </div>

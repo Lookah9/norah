@@ -147,6 +147,7 @@ function EditorialScrollySection({
                 exit="exit"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 loading="lazy"
+                decoding="async"
                 width={800}
                 height={1000}
               />

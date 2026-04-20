@@ -63,6 +63,7 @@ export default function Header() {
           width={300}
           height={100}
           loading="eager"
+          decoding="async"
         />
         <motion.img 
           src={`${ASSET_PREFIX}/Logos/Logo_black_optimized.png`}
@@ -73,6 +74,7 @@ export default function Header() {
           width={300}
           height={100}
           loading="lazy"
+          decoding="async"
         />
       </motion.div>
 

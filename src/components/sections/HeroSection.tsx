@@ -54,9 +54,9 @@ export default function HeroSection() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
             // @ts-ignore
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
-            decoding="sync"
+            decoding="async"
             width={1920}
             height={1080}
           />
