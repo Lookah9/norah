@@ -56,7 +56,7 @@ export default function HeroSection() {
             // @ts-ignore
             fetchPriority="high"
             loading="eager"
-            decoding="async"
+            decoding="sync"
             width={1920}
             height={1080}
           />

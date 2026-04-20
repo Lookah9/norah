@@ -41,6 +41,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`overscroll-none ${playfair.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Hero_converted.webp`} as="image" fetchpriority="high" media="(min-width: 769px)" />
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Hero_mobile_converted.webp`} as="image" fetchpriority="high" media="(max-width: 768px)" />
+      </head>
       <body className="overscroll-none font-sans antialiased text-brand-charcoal bg-brand-ivory min-h-screen">
         <LanguageProvider>
           {children}
