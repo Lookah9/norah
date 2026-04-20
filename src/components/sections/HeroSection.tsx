@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "../Button";
-import { X, ChevronRight, ChevronLeft } from "lucide-react";
 import { ASSET_PREFIX } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { GalleryModal } from "../GalleryModal";
