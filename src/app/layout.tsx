@@ -29,13 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: [
         { url: `${basePath}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' },
       ],
-      other: [
-        { rel: 'manifest', url: `${basePath}/site.webmanifest` },
-        { rel: 'preload', url: `${basePath}/Hero_converted.webp`, as: 'image', fetchpriority: 'high', media: '(min-width: 769px)' },
-        { rel: 'preload', url: `${basePath}/Hero_mobile_converted.webp`, as: 'image', fetchpriority: 'high', media: '(max-width: 768px)' },
-        { rel: 'preload', url: `${basePath}/Logos/Logo_white_optimized.png`, as: 'image' },
-      ],
     },
+    manifest: `${basePath}/site.webmanifest`,
   };
 }
 
@@ -46,6 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`overscroll-none ${playfair.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Hero_converted.webp`} as="image" fetchpriority="high" media="(min-width: 769px)" />
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Hero_mobile_converted.webp`} as="image" fetchpriority="high" media="(max-width: 768px)" />
+        <link rel="preload" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Logos/Logo_white_optimized.png`} as="image" />
+      </head>
       <body className="overscroll-none font-sans antialiased text-brand-charcoal bg-brand-ivory min-h-screen">
         <LanguageProvider>
           {children}
